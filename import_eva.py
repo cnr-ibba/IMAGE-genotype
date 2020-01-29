@@ -102,6 +102,8 @@ def parse_into_specimen(record, results):
 
     es_doc.setdefault('analyses', list())
     es_doc['analyses'].append(record['analysis_accession'])
+    es_doc.setdefault('datasets', list())
+    es_doc['datasets'].append(record['study_accession'])
     results[sample_accession] = es_doc
 
     return results
